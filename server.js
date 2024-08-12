@@ -15,11 +15,12 @@ dotenv.config();
 
 const PORT = process.env.SERVER_PORT || 8000;
 const MONGO_ATLAS_URL = process.env.MONGO_ATLAS_URL;
+const FRONTEND_URL =process.env.FRONTEND_URL || "http://localhost:5173";
 
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: FRONTEND_URL,
   })
 );
 
