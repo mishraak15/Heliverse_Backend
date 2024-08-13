@@ -19,7 +19,7 @@ const token = signToken(id);
     httpOnly: true,
     secure: process?.env?.NODE_ENV === "production",
     sameSite: 'Lax',
-    domain: process?.env?.FRONTEND_URL || "http://localhost:5173",
+    domain: process.env.FRONTEND_URL || "http://localhost:5173",
   };
 
   res.cookie("jwt", token, cookieOptions);
