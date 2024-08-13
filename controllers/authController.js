@@ -18,8 +18,7 @@ const token = signToken(id);
     expires: new Date(Date.now() + cookieExpiryDays * 24 * 60 * 60 * 1000),
     httpOnly: true,
     secure: process?.env?.NODE_ENV === "production",
-    sameSite: 'Lax',
-    domain: process.env.FRONTEND_URL || "http://localhost:5173",
+    sameSite: 'None',
   };
 
   res.cookie("jwt", token, cookieOptions);
